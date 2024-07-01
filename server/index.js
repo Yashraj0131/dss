@@ -20,34 +20,10 @@ app.use(express.urlencoded({ extended: false}));
 app.use(router);
 app.set('view engine', 'ejs');
 
-app.get('/Reset-password/:email/:token',(req,res,next) => {
-    const { email, token } = req.params;
-    console.log(req.params);
-    
-    
-
-    const secret = JWT_SECRET ;
-    try {
-      const payload = jwt.verify(token, secret);
-      console.log(payload);
-      res.render('Reset-password',{email: jwt.verify.email, status:"not verified"});
-    } catch (error) {
-        console.log(error.message);
-        res.send(error.message);
-       
-    }
- });
-
-
-
-
-app.get("/",(req,res)=> {
-    res.send("Hello from the express");
-});
-
-app.get("*",(req,res)=>{
-    res.render("404",{title:"404"});
-});
+app.use(express.static(path.join(__dirname,"./build")))
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/build/index.html'))
+})
 
 // app.get('/Profile-show/:email/:token',(req,res,next) => {
 //     const { email, token } = req.params;
