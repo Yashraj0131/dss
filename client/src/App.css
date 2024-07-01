@@ -1,0 +1,88 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+:root {
+  --radius: 50;
+  --PI: 3.14159265358979;
+  --circumference: calc(var(--PI) * var(--radius) * 2px)
+}
+.circle-svg {
+  background: #fff;
+}
+.circle-svg circle {
+  stroke: red;
+  stroke-width: 4;
+  fill: transparent;
+  transform-origin: center;
+  stroke-dasharray: var(--circumference);
+  animation: spinner 2s ease-out infinite;
+}
+
+@keyframes spinner {
+  from {
+    stroke-dashoffset: var(--circumference);
+    stroke: red;
+    transform: rotateZ(0deg)
+  }
+  to {
+    stroke-dashoffset: calc(var(--circumference) * -1);
+    stroke: green;
+    transform: rotateZ(720deg)
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+.product-list {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.product-list ul li {
+  display:inline-block;
+  width: 200px;
+  border: 2px solid rgb(255, 171, 25);
+  padding: 5px;
+  margin:2px;
+}
+
+.product-list ul{
+  margin: 2px;
+}
+.required-field::after {
+  content: "*";
+  color: red;
+  margin-left:2px
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
