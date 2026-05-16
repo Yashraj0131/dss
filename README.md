@@ -111,6 +111,7 @@ The key objectives of the DSS project are:
 ## Contributors
 - **[Yashraj Mishra]** - Developer
 - **[Sandy]** - Collaborators
+- **[Rahul Dixit]** - Collaborators
 
 For further details or inquiries, feel free to reach out.
 
